@@ -1,0 +1,1444 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* =========================================
+   1. GLOBAL STYLES
+========================================= */
+
+:root {
+    --lavender: #a58acb;
+    --lavender-dark: #8064aa;
+    --lavender-light: #f2eafa;
+    --pink: #f3dce8;
+    --pink-dark: #d58ca7;
+    --cream: #fffaf5;
+    --peach: #f7e5d9;
+    --text: #383044;
+    --muted: #81788b;
+    --white: #ffffff;
+    --border: #eee5f1;
+    --success-bg: #e9f7ed;
+    --success-text: #28683b;
+    --error-bg: #fff0f0;
+    --error-text: #a33232;
+    --shadow: 0 10px 30px rgba(120, 90, 140, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--cream);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+    color: #51445f;
+}
+
+/* =========================================
+   2. BUTTONS
+========================================= */
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 22px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    color: var(--white);
+    background: var(--lavender);
+}
+
+.button-primary:hover {
+    background: var(--lavender-dark);
+}
+
+.button-light {
+    color: var(--lavender-dark);
+    background: var(--white);
+    border-color: #e7dced;
+}
+
+.button-light:hover {
+    background: var(--lavender-light);
+}
+
+/* =========================================
+   3. PUBLIC NAVIGATION
+========================================= */
+
+.navbar {
+    min-height: 78px;
+    padding: 16px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 250, 245, 0.96);
+    border-bottom: 1px solid #f0e8ef;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--lavender);
+}
+
+.nav-links,
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a,
+.login-link {
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.nav-links a:hover,
+.login-link:hover {
+    color: var(--lavender-dark);
+}
+
+/* =========================================
+   4. HOMEPAGE HERO
+========================================= */
+
+.hero {
+    min-height: 570px;
+    padding: 85px 9%;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 40px;
+    background: linear-gradient(120deg, #fff6f3, #f5edfa, #fff9f2);
+    overflow: hidden;
+}
+
+.eyebrow {
+    color: var(--lavender-dark);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin: 20px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(44px, 5vw, 68px);
+    line-height: 1.12;
+}
+
+.hero h1 span {
+    color: var(--lavender);
+    font-style: italic;
+}
+
+.hero-content > p {
+    max-width: 480px;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 28px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-decoration {
+    position: relative;
+    min-height: 370px;
+}
+
+.art-card {
+    position: absolute;
+    width: 230px;
+    padding: 12px;
+    background: var(--white);
+    border-radius: 18px;
+    box-shadow: 0 18px 45px #78648b20;
+}
+
+.art-card span,
+.art-card small {
+    display: block;
+    margin: 9px 3px 0;
+}
+
+.art-card span {
+    font-weight: 700;
+}
+
+.art-card small {
+    color: var(--muted);
+}
+
+.art-card-one {
+    top: 10px;
+    left: 20px;
+    transform: rotate(-7deg);
+}
+
+.art-card-two {
+    top: 110px;
+    right: 10px;
+    transform: rotate(7deg);
+}
+
+.art-placeholder {
+    height: 210px;
+    border-radius: 12px;
+}
+
+.art-pink {
+    background: radial-gradient(circle at 30% 30%, #fff6d8, #edb9d0 45%, #b69bcf);
+}
+
+.art-purple {
+    background: radial-gradient(circle at 70% 25%, #fce8d9, #c4a8e0 45%, #8871ae);
+}
+
+.floating-star {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    color: #d9a6c2;
+    font-size: 55px;
+}
+
+.floating-circle {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #f4d7e6;
+}
+
+/* =========================================
+   5. HOMEPAGE SECTIONS
+========================================= */
+
+.section {
+    padding: 85px 9%;
+}
+
+.section-heading h2,
+.about-section h2 {
+    margin: 12px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+}
+
+.section-heading p,
+.about-section p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.empty-gallery {
+    margin-top: 35px;
+    padding: 65px 20px;
+    text-align: center;
+    border: 1px dashed #d8c8e1;
+    border-radius: 25px;
+    background: var(--white);
+}
+
+.empty-icon {
+    font-size: 45px;
+    color: var(--lavender);
+}
+
+.empty-gallery h3 {
+    margin: 15px 0 8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+}
+
+.empty-gallery p {
+    margin-bottom: 22px;
+    color: var(--muted);
+}
+
+.about-section {
+    padding: 75px 9%;
+    text-align: center;
+    background: #f4edf8;
+}
+
+.about-section p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer {
+    padding: 45px 9%;
+    text-align: center;
+    color: var(--muted);
+    background: var(--white);
+    line-height: 2;
+}
+
+.footer h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text);
+}
+
+/* =========================================
+   6. GENERAL DASHBOARD
+========================================= */
+
+.dashboard {
+    min-height: 70vh;
+    padding: 65px 9%;
+}
+
+.dashboard h1 {
+    margin: 12px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+}
+
+.dashboard p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.dashboard-card {
+    max-width: 750px;
+    margin-top: 30px;
+    padding: 30px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.dashboard-card h2 {
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   7. ROLE SELECTION
+========================================= */
+
+.role-selection {
+    max-width: 1050px;
+    margin: 70px auto;
+    padding: 30px 24px;
+    text-align: center;
+}
+
+.role-heading {
+    max-width: 650px;
+    margin: 0 auto 45px;
+}
+
+.role-heading h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #51445f;
+    margin: 15px 0;
+}
+
+.role-heading p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.role-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.role-card {
+    display: block;
+    position: relative;
+    padding: 35px 28px;
+    background: #fffafc;
+    border: 2px solid #eee2ef;
+    border-radius: 22px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.role-card:hover {
+    transform: translateY(-5px);
+    border-color: #b99bd5;
+    box-shadow: var(--shadow);
+}
+
+.role-card:has(input:checked) {
+    border-color: var(--lavender);
+    background: #f7f0fc;
+}
+
+.role-card input {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    accent-color: #9273b8;
+}
+
+.role-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.role-card h2 {
+    margin-bottom: 12px;
+}
+
+.role-card p {
+    color: var(--muted);
+    line-height: 1.7;
+    min-height: 80px;
+}
+
+.role-choice {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 22px;
+    border-radius: 30px;
+    background: #eee3f7;
+    color: var(--lavender-dark);
+    font-weight: 600;
+}
+
+.role-submit {
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.role-error {
+    color: #b42318;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   8. AUTHENTICATION PAGES
+========================================= */
+
+.artfolio-auth-page {
+    min-height: 100vh;
+    padding: 45px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f7effb, #fff5f5, #fffaf0);
+}
+
+.auth-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: bold;
+    color: #51445f;
+    margin-bottom: 25px;
+}
+
+.auth-logo span {
+    color: #c49acb;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 470px;
+    padding: 38px;
+    border: 1px solid #eee2ef;
+    border-radius: 24px;
+    background: var(--white);
+    box-shadow: 0 15px 45px rgba(100, 75, 120, 0.10);
+}
+
+.auth-brand {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-brand h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin: 12px 0;
+}
+
+.auth-brand p {
+    color: #8b8091;
+    font-size: 14px;
+}
+
+.auth-back-home {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+.auth-back-home a {
+    color: #9273b8;
+}
+
+.auth-back-home a:hover {
+    text-decoration: underline;
+}
+
+.auth-copyright {
+    margin-top: 25px;
+    color: #968a9d;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* =========================================
+   9. ARTIST WORKSPACE LAYOUT
+========================================= */
+
+.artist-dashboard {
+    display: flex;
+    min-height: 100vh;
+    background: #faf7fc;
+    color: #51445f;
+}
+
+/* Sidebar */
+
+.artist-sidebar {
+    width: 250px;
+    min-width: 250px;
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.artist-sidebar-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 29px;
+    font-weight: bold;
+    color: #51445f;
+    margin: 0 0 45px 10px;
+}
+
+.artist-sidebar-logo span {
+    color: #c49acb;
+}
+
+.sidebar-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #aa9eaf;
+    margin: 20px 10px 12px;
+}
+
+.artist-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.artist-menu a {
+    display: block;
+    padding: 12px;
+    border-radius: 10px;
+    color: var(--muted);
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.artist-menu a:hover,
+.artist-menu a.active {
+    background: var(--lavender-light);
+    color: var(--lavender-dark);
+}
+
+.sidebar-bottom {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    padding: 20px 5px 0;
+    border-top: 1px solid var(--border);
+}
+
+.sidebar-avatar {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    background: #eadcf5;
+    color: var(--lavender-dark);
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+}
+
+.sidebar-user {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.sidebar-user strong {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.sidebar-user span {
+    font-size: 11px;
+    color: #a095a9;
+}
+
+.artist-logout {
+    width: 100%;
+    margin-top: 18px;
+    padding: 11px;
+    border: 1px solid #eee2ef;
+    border-radius: 9px;
+    background: #fff7fa;
+    color: #a56d88;
+    cursor: pointer;
+}
+
+/* Main content */
+
+.artist-main {
+    flex: 1;
+    min-width: 0;
+    padding: 38px 45px;
+}
+
+.artist-topbar,
+.artist-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.artist-topbar h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin: 8px 0;
+}
+
+.artist-topbar p,
+.artist-section-heading p {
+    color: #94889b;
+    font-size: 13px;
+}
+
+.artist-upload-button {
+    display: inline-block;
+    border: none;
+    background: #9273b8;
+    color: var(--white);
+    padding: 13px 20px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.artist-upload-button:hover {
+    background: var(--lavender-dark);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   10. ARTIST DASHBOARD CONTENT
+========================================= */
+
+.artist-welcome {
+    margin-top: 32px;
+    padding: 35px 40px;
+    min-height: 190px;
+    border-radius: 20px;
+    background: linear-gradient(120deg, #eee4f8, #fff0f4, #fff6eb);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.artist-welcome span {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #9273b8;
+}
+
+.artist-welcome h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    margin: 12px 0;
+}
+
+.artist-welcome p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+    max-width: 470px;
+}
+
+.artist-welcome a {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--lavender-dark);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.welcome-decoration {
+    font-size: 120px;
+    color: rgba(165, 138, 203, 0.25);
+    padding-right: 25px;
+}
+
+.artist-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 17px;
+    margin: 28px 0 45px;
+}
+
+.artist-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 20px 15px;
+    background: var(--white);
+    border: 1px solid #f0e8f2;
+    border-radius: 15px;
+}
+
+.stat-icon {
+    width: 43px;
+    height: 43px;
+    min-width: 43px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+}
+
+.stat-icon.lavender { background: #f0e8fa; color: #9273b8; }
+.stat-icon.pink { background: #fff0f4; color: #d58ca7; }
+.stat-icon.peach { background: #fff0e8; color: #d99b78; }
+.stat-icon.cream { background: #fff8df; color: #c6a44e; }
+
+.artist-stat-card span {
+    color: #94889b;
+    font-size: 11px;
+}
+
+.artist-stat-card h3 {
+    font-size: 23px;
+    margin: 5px 0;
+}
+
+.artist-stat-card small {
+    color: #aaa0af;
+    font-size: 10px;
+}
+
+.artist-section {
+    margin-bottom: 40px;
+    scroll-margin-top: 25px;
+}
+
+.artist-section-heading {
+    margin-bottom: 20px;
+}
+
+.artist-section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    margin: 7px 0;
+}
+
+.artwork-count {
+    color: var(--lavender-dark);
+    font-size: 12px;
+    background: var(--lavender-light);
+    padding: 9px 14px;
+    border-radius: 20px;
+}
+
+.artist-empty-state {
+    background: var(--white);
+    border: 1px dashed #d9c9e6;
+    border-radius: 18px;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.empty-art-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.artist-empty-state h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.artist-empty-state p {
+    color: #94889b;
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 430px;
+    margin: 0 auto 20px;
+}
+
+.artist-placeholder {
+    padding: 35px;
+    border-radius: 15px;
+    background: var(--white);
+    border: 1px solid #f0e8f2;
+    color: #a095a9;
+    font-size: 13px;
+    text-align: center;
+}
+
+.artist-footer {
+    padding: 25px 0;
+    border-top: 1px solid var(--border);
+    color: #a095a9;
+    font-size: 12px;
+}
+
+/* =========================================
+   11. ARTIST MULTI-PAGE CONTENT
+========================================= */
+
+.artist-page-heading {
+    margin-bottom: 35px;
+}
+
+.artist-page-heading h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    margin: 10px 0;
+}
+
+.artist-page-heading p {
+    color: #94889b;
+    font-size: 14px;
+}
+
+.artist-content-card {
+    background: var(--white);
+    border: 1px solid #f0e8f2;
+    border-radius: 18px;
+    padding: 40px 25px;
+}
+
+.artist-page-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: var(--lavender);
+}
+
+.artist-content-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.artist-content-card p {
+    color: #94889b;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.artist-coming-soon {
+    color: var(--lavender) !important;
+    font-size: 12px !important;
+}
+
+.artist-quick-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.artist-quick-links a {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 23px;
+    border: 1px solid #f0e8f2;
+    border-radius: 15px;
+    background: var(--white);
+    color: var(--lavender-dark);
+    transition: 0.2s;
+}
+
+.artist-quick-links a:hover {
+    transform: translateY(-3px);
+    border-color: #cbb7df;
+    box-shadow: var(--shadow);
+}
+
+.artist-quick-links strong {
+    color: #51445f;
+    font-size: 14px;
+}
+
+.artist-quick-links span {
+    color: #94889b;
+    font-size: 12px;
+}
+
+/* =========================================
+   12. ARTWORK GALLERY
+========================================= */
+
+.artwork-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+    margin-top: 25px;
+}
+
+.artwork-card {
+    background: var(--white);
+    border: 1px solid #f0e8f2;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(80, 50, 100, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.artwork-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(80, 50, 100, 0.12);
+}
+
+.artwork-image {
+    width: 100%;
+    height: 260px;
+    background: #f3edf8;
+    overflow: hidden;
+}
+
+.artwork-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.artwork-details {
+    padding: 18px;
+}
+
+.artwork-details h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.artwork-artist,
+.artwork-category {
+    margin: 5px 0;
+    color: #777;
+    font-size: 13px;
+}
+
+.artwork-description {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.artwork-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid #f0e8f4;
+    font-size: 13px;
+}
+
+.favorite-button {
+    border: 1px solid #d9b8e8;
+    border-radius: 20px;
+    padding: 8px 12px;
+    background: #faf5ff;
+    color: #80549b;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* =========================================
+   13. ARTIST PROFILE DISPLAY
+========================================= */
+
+.saved-profile-card {
+    max-width: 850px;
+    padding: 35px;
+}
+
+.saved-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.saved-profile-avatar {
+    width: 135px;
+    height: 135px;
+    min-width: 135px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f0e7f8;
+    border: 4px solid #eadcf4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #966eae;
+    font-size: 50px;
+}
+
+.saved-profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.saved-profile-heading h2 {
+    margin: 8px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+}
+
+.saved-profile-heading p,
+.profile-not-set {
+    color: #888;
+}
+
+.saved-profile-divider {
+    height: 1px;
+    background: #eee5f3;
+    margin: 30px 0;
+}
+
+.saved-profile-section {
+    margin-bottom: 25px;
+}
+
+.saved-profile-section h3 {
+    margin-bottom: 10px;
+    color: #51445b;
+}
+
+.saved-profile-section p {
+    line-height: 1.7;
+    white-space: pre-line;
+}
+
+.saved-profile-section a {
+    color: #9567ad;
+    overflow-wrap: anywhere;
+}
+
+.saved-profile-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.artist-my-collection {
+    margin-top: 40px;
+}
+
+.collection-heading {
+    margin-bottom: 20px;
+}
+
+.collection-heading h2 {
+    margin-top: 8px;
+}
+
+/* =========================================
+   14. PROFILE SETTINGS FORM
+========================================= */
+
+.profile-editor {
+    max-width: 850px;
+    padding: 30px;
+}
+
+.profile-photo-section {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.profile-photo-preview {
+    width: 125px;
+    height: 125px;
+    min-width: 125px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f0e7f8;
+    border: 4px solid #eadcf4;
+}
+
+.profile-photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #966eae;
+    font-size: 45px;
+}
+
+.profile-photo-info h3 {
+    margin: 0 0 8px;
+}
+
+.profile-photo-info p,
+.profile-photo-info small {
+    color: #777;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.profile-form-divider {
+    height: 1px;
+    background: #eee5f3;
+    margin: 25px 0;
+}
+
+.profile-form-group {
+    margin-bottom: 22px;
+}
+
+.profile-form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 9px;
+    color: #51445b;
+}
+
+.profile-form-group input,
+.profile-form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #e5d9ec;
+    border-radius: 10px;
+    background: var(--white);
+    color: var(--text);
+    outline: none;
+}
+
+.profile-form-group input:focus,
+.profile-form-group textarea:focus {
+    border-color: #b68acb;
+    box-shadow: 0 0 0 3px rgba(182, 138, 203, 0.12);
+}
+
+.profile-form-group textarea {
+    resize: vertical;
+}
+
+.profile-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.profile-success {
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    background: var(--success-bg);
+    color: var(--success-text);
+    border-radius: 10px;
+}
+
+.profile-errors {
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    background: var(--error-bg);
+    color: var(--error-text);
+    border-radius: 10px;
+}
+
+.profile-errors ul {
+    margin: 8px 0 0 20px;
+}
+
+.field-error {
+    display: block;
+    color: #bd3e50;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+/* =========================================
+   15. RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1100px) {
+    .artist-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .artist-main {
+        padding: 30px 25px;
+    }
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 65px 7%;
+    }
+
+    .hero-decoration {
+        min-height: 380px;
+    }
+
+    .section {
+        padding: 60px 7%;
+    }
+
+    .about-section {
+        padding: 60px 7%;
+    }
+}
+
+@media (max-width: 700px) {
+    .artist-dashboard {
+        flex-direction: column;
+    }
+
+    .artist-sidebar {
+        width: 100%;
+        min-width: 0;
+        padding: 18px;
+    }
+
+    .artist-sidebar-logo {
+        margin: 0 0 15px;
+    }
+
+    .artist-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar-bottom {
+        margin-top: 20px;
+    }
+
+    .artist-main {
+        padding: 25px 18px;
+    }
+
+    .artist-topbar,
+    .artist-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .artist-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .artist-welcome {
+        padding: 25px;
+    }
+
+    .welcome-decoration {
+        display: none;
+    }
+
+    .artist-quick-links {
+        grid-template-columns: 1fr;
+    }
+
+    .role-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .role-heading h1 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .saved-profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .saved-profile-card {
+        padding: 20px;
+    }
+
+    .profile-photo-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-editor {
+        padding: 20px;
+    }
+
+    .artist-my-collection .artwork-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .artist-my-collection .artwork-image {
+        height: 170px;
+    }
+
+    .artwork-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .artwork-image {
+        height: 170px;
+    }
+
+    .section-heading h2,
+    .about-section h2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-actions {
+        gap: 12px;
+    }
+
+    .art-card {
+        width: 190px;
+    }
+
+    .art-placeholder {
+        height: 170px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .auth-card {
+        padding: 25px 20px;
+    }
+
+    .auth-brand h1 {
+        font-size: 25px;
+    }
+
+    .role-selection {
+        margin: 35px auto;
+        padding: 20px 15px;
+    }
+
+    .role-heading h1 {
+        font-size: 29px;
+    }
+
+    .profile-form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .profile-form-actions .button {
+        width: 100%;
+    }
+}
